@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--  使用VS CODE 插件 live server 打开 -->
+    <!-- 应该显示下面的内容 -->
+    <!--   你好世界,我正从http://localhost:3000/向http://127.0.0.1:5500发送请求-->
+    <div></div>
+  </body>
+  <script>
+    const endpoint = "http://localhost:3000/";
+
+    fetch(endpoint)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(myJson) {
+        let result = document.querySelector("div");
+        result.innerText = `${myJson.message},
+        我正从:
+        ${endpoint}
+        向
+        ${myJson.ip}
+        发送请求`;
+      });
+  </script>
+</html>

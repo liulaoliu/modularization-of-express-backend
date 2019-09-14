@@ -1,0 +1,13 @@
+@uri = http://localhost:3000
+###
+
+post {{uri}}/api/docs
+Content-Type: application/json
+
+{
+    "title":"第二条标题",
+    "content":"岂因祸福避趋之"
+}
+
+###
+get {{uri}}/api/docs
