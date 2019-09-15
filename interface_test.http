@@ -5,9 +5,32 @@ post {{uri}}/api/docs
 Content-Type: application/json
 
 {
-    "title":"第二条标题",
-    "content":"岂因祸福避趋之"
+    "title":"第五条标题",
+    "content":"出门一笑莫心哀",
+    "tags":["5d7d913b86c4882034ffb271","5d7d913686c4882034ffb270"]
 }
 
 ###
 get {{uri}}/api/docs
+
+### 增加一个分类tag
+post {{uri}}/api/docs/tags/add
+Content-Type: application/json
+
+{
+   "name":"分类4"
+}
+
+### 查找某个分类
+get {{uri}}/api/docs/tags/get
+
+### 按照一个文章的id来查询到对应的文章，并且查询其所属的分类
+get {{uri}}/api/docs/5d7d930e86c4882034ffb277
+### 按照一个文章的id来查询到对应的文章，并且查询其所属的分类
+get {{uri}}/api/docs/5d7d92bb86c4882034ffb274
+### 按照一个文章的id来查询到对应的文章，并且查询其对应的分类组
+get {{uri}}/api/docs/5d7d92bb86c4882034ffb274
+### 按照某个分类 来找对应的文章
+get {{uri}}/api/docs/tags/relative/5d7d913b86c4882034ffb271
+
+

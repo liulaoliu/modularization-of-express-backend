@@ -12,8 +12,10 @@ app.use(express.json());
 
 // 添加mongodb 
 require('./db/index.js')();
-// 添加子路由 /api/docs
+// 添加子路由 /api/docs 增加文章
 require('./routes/docs/article.js')(app);
+// 添加子路由 /api/docs/tags 增加文章的分类
+require('./routes/docs/tag.js')(app);
 
 // 第一步接口测试, 通过则说明 服务器可以正常运行。 也配合index.html用于跨域测试
 // app.get("/", (req, res) => {
